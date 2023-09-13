@@ -1,3 +1,6 @@
+from udid import device_udid
+
+
 def android_get_desired_capabilities():
     return {
         "autoGrantPermissions": True,
@@ -9,7 +12,7 @@ def android_get_desired_capabilities():
         "resetKeyboard": True,
         "systemPort": 8301,
         "takesScreenshot": True,
-        "udid": "11bd127d",
+        "udid": device_udid(),
         "appPackage": "com.ajaxsystems",
         "appActivity": "com.ajaxsystems.ui.activity.LauncherActivity",
     }
