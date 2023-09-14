@@ -1,5 +1,3 @@
-import time
-
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.common import NoSuchElementException
 

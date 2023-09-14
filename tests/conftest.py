@@ -10,7 +10,15 @@ from utils.android_utils import android_get_desired_capabilities
 @pytest.fixture(scope="session")
 def run_appium_server():
     subprocess.Popen(
-        ["appium", "-a", "0.0.0.0", "-p", "4723", "--allow-insecure", "adb_shell"],
+        [
+            "appium",
+            "-a",
+            "0.0.0.0",
+            "-p",
+            "4723",
+            "--allow-insecure",
+            "adb_shell",
+        ],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
         stdin=subprocess.DEVNULL,
