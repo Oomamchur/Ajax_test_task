@@ -1,4 +1,4 @@
-from udid import device_udid
+from utils.udid import device_udid
 
 
 def android_get_desired_capabilities():
