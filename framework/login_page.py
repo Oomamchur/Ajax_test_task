@@ -1,3 +1,5 @@
+import time
+
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.common import NoSuchElementException
 
@@ -6,13 +8,19 @@ from .page import Page
 
 class LoginPage(Page):
     def find_hello_login(self):
-        return self.find_element(MobileBy.ID, "com.ajaxsystems:id/authHelloLogin")
+        return self.find_element(
+            MobileBy.ID, "com.ajaxsystems:id/authHelloLogin"
+        )
 
     def find_email(self):
-        return self.find_element(MobileBy.ID, "com.ajaxsystems:id/authLoginEmail")
+        return self.find_element(
+            MobileBy.ID, "com.ajaxsystems:id/authLoginEmail"
+        )
 
     def find_password(self):
-        return self.find_element(MobileBy.ID, "com.ajaxsystems:id/authLoginPassword")
+        return self.find_element(
+            MobileBy.ID, "com.ajaxsystems:id/authLoginPassword"
+        )
 
     def find_login(self):
         return self.find_element(MobileBy.ID, "com.ajaxsystems:id/authLogin")
@@ -29,8 +37,10 @@ class LoginPage(Page):
 
     @staticmethod
     def write_email(email_field, email):
+        email_field.clear()
         email_field.send_keys(email)
 
     @staticmethod
     def write_password(password_field, password):
+        password_field.clear()
         password_field.send_keys(password)

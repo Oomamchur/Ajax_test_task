@@ -3,6 +3,7 @@ import time
 
 import pytest
 from appium import webdriver
+
 from utils.android_utils import android_get_desired_capabilities
 
 
