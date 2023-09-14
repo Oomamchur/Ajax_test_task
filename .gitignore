@@ -1,0 +1,6 @@
+**venv
+/.idea/workspace.xml
+.DS_Store
+**.idea
+.env
+**.pytest_cache
