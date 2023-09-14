@@ -4,7 +4,6 @@ import time
 import pytest
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 
@@ -29,14 +28,29 @@ def test_user_login(user_login_fixture, email, password, result):
     assert page.is_element("com.ajaxsystems:id/authLogin") == result
 
 
-
 @pytest.mark.parametrize(
     "email,password,sidebar_element",
     [
-        (os.getenv("EMAIL"), os.getenv("PASSWORD"), "com.ajaxsystems:id/settings"),
-        ("some_email@gmail.com", os.getenv("PASSWORD"), "com.ajaxsystems:id/help"),
-        (os.getenv("EMAIL"), "some_password", "com.ajaxsystems:id/logs"),
-        ("some_email@gmail.com", "some_password", "com.ajaxsystems:id/addHub"),
+        (
+            os.getenv("EMAIL"),
+            os.getenv("PASSWORD"),
+            "com.ajaxsystems:id/settings",
+        ),
+        (
+            "some_email@gmail.com",
+            os.getenv("PASSWORD"),
+            "com.ajaxsystems:id/help",
+        ),
+        (
+                os.getenv("EMAIL"),
+                "some_password",
+                "com.ajaxsystems:id/logs"
+        ),
+        (
+                "some_email@gmail.com",
+                "some_password",
+                "com.ajaxsystems:id/addHub"
+        ),
     ],
 )
 def test_sidebar(user_login_fixture, email, password, sidebar_element):
@@ -51,4 +65,3 @@ def test_sidebar(user_login_fixture, email, password, sidebar_element):
     page.click_element(page.find_sidebar())
 
     assert page.is_element(sidebar_element)
-
